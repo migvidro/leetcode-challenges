@@ -9,7 +9,6 @@ Given a string s and an integer k, return the maximum number of vowel letters in
 
 Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
 
-
 Example 1:
 
 Input: s = "abciiidef", k = 3
@@ -32,9 +31,15 @@ Constraints:
 1 <= s.length <= 105
 s consists of lowercase English letters.
 1 <= k <= s.length
+
+Approach:
+1. Find out how many vowels are in the first window.
+2. Move the window next and check if the element leaving it and the element entering it are vowels
+3. Return the result, which contains the maximum number of vowel letters in any window.
 """
 
 vowels = {"a", "e", "i", "o", "u"}
+
 
 def max_vowels(s: str, k: int) -> int:
     size = len(s)
@@ -55,7 +60,7 @@ def max_vowels(s: str, k: int) -> int:
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     string_input = "weallloveyou"
     window = 7
     print(max_vowels(string_input, window))
